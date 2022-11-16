@@ -1,0 +1,250 @@
+JAVA
+====
+	-bahasa turunan dari c/c++
+	-jargon: Write Once Run Anywhere --> multiplatform
+	-jenis edition:
+		a. jse (standart edition)
+			-develop dekstop / console app
+
+		b. jme (micro edition)
+			-develop embedded devices
+
+		c. jee (enterprise edition)
+			-develop web app
+			-develop api
+			-develop distributed component
+
+	-apa yg dibutuhkan untuk develop app dengan java:
+		a. editor
+		b. java sdk/jdk
+			-tool2 untuk mengcompile & melakukan keperluan development
+		c. java vm/re
+			-untuk mengexcute program java
+
+
+cara menulis dan mengcompile program java
+==========================================
+1. source code HARUS berekestensi .java
+2. hasil kompilasi pasti berekenstensi .class
+3. untuk eksekusi:
+	java NamaFileDotClassTanpaEkstensi
+
+Standar penamaan class di dalam java
+====================================
+1. diawali upper case
+2. diikuti lower case
+3. kata baru diawali uppercase
+4. singkatan semuanya ditulis upper case
+	CONTOH:
+		Contoh
+		ContohClass
+		ContohClassJDT
+		ContohClassJDTLagi
+
+Standar penamaan VARIABLE di dalam java
+====================================
+1. diawali lower case
+2. diikuti lower case
+3. kata baru diawali uppercase
+4. singkatan semuanya ditulis upper case
+	CONTOH:
+		contoh
+		contohVariable
+		contohVariableJDT
+		contohVariableJDTLagi
+
+
+JENIS CLASS DI DALAM JAVA
+==========================
+a. driver class / main class
+	-di dalamnya terdapat function : public static void main(String [] args)
+	-class ini bisa langsung di execute dengan command "java NamaClass"
+
+b. library class
+	-di dalamnya TIDAK terdapat function : public static void main(String [] args)
+	-class ini TIDAK bisa langsung di execute dengan command "java NamaClass"
+	-class ini tujuaanya adalah dipanggil dari class lain
+
+
+ATURAN PENAMAAN SOURCE CODE
+===========================
+1. nama file.java HARUS sama persis dengan nama class yang berlabel "public"
+2. jika di dalam sebuah file.java TIDAK ADA class yg berlabel public, maka nama file BEBAS
+3. jika di dalam file.java ADA BANYAK class, dan TIDAK ADA yg berlabel public , maka nama file BEBAS
+4. jika di dalam file.java ADA BANYAK class, dan ADA yg berlabel public , maka nama file harus sama dengan nama class
+yang berlabel public
+5. jika di dalam file.java ADA BANYAK class, hanya boleh ada 1 yang berlabel public
+6. file .java jika dicompile TIDAK men-generate .class, tetapi yg menjadi .class adalah definisi class di dalam
+file .java anda
+
+
+JAR
+===
+	-java archive
+	-adalah cara yg digunakan untuk mendisitribusikan hasil project java ke end user
+	-jar sebenarnya adalah file zip, hanya saja extensinya .jar
+
+
+langkah2 membuat file jar
+==========================
+1. buatlah sebuah folder bernama META-INF yg lokasi selevel dengan file .class anda
+2. di dalam folder META-INF, buatlah sebuah file bernama :
+	MANIFEST.MF
+3. lakukan zipping pada semua object anda, dengan aturan:
+	a. zip algorithm WAJIB zip (bukan rar/7z/gz/yg lain....)
+	b. nama file bebas, tetapi extensi HARUS .jar
+
+
+
+
+-java adalah bahasa yang "strong type", maksudnya adalah jika kita membuat variable, maka type data WAJIB di tentukan
+-jenis type data di java ada 2 jenis:
+	a. primitive data type
+		-type asli bawaan java
+		-nama type menjadi "keyword" di dalam java languange
+		-jumlahnya ada 8:
+		1. bilangan bulat (integer)
+			a. byte (8 bit) / 1 byte
+			b. short (16 bit) / 2 bytes
+			c. int (32 bit) / 4 bytes
+			d. long (64 bit) / 8 bytes
+
+			-makin besar bit, maka makin lebar range angka yg bisa disimpan
+			-semua type data numerik di java adalah SIGNED (bisa menyimpan - atau +)
+			-rumus menghitung range pada sebuah bilangan integer:
+				((2`n)-1)/2 --> separo -, separo +
+			-pilih type data sesuai kebutuhan
+
+		2. bilangan pecahan (floating point)
+			a. float (32 bit), max 7 point decimal
+			b. double (64 bit), max 14 point decimal
+			-jika kita membuat literal/value bilangan pecahan type defaultnya adalah 64 bit(double)
+
+		3. single character
+			-nama type : char
+			-digunakan untuk menyimpan data 1 karakter & diapit dengan single quote (')
+			-tiap 1 char membutuhkan 16 bit (UNICODE yang merupakan superset dari ASCII)
+			-tujunan 16 bit: untuk internationalization support 
+			-jika variable bertype char kita isi dengan value integer, jika di print akan muncul
+			huruf sesuai nilai ascii kode yg anda entry
+
+		4. boolean
+			-nama type: boolean
+			-type data yang hanya memuat 2 value : true/false
+			-jumlah byte yg dikonsumsi adalah platform dependent
+
+	TYPE CASTING
+	============
+	-adalah nama lain dari konversi type data
+	-jenis casting:
+		a. implicit casting
+			-casting terjadi otomatis
+			-hanya bisa terjadi jika casting dari type bit kecil ke bit besar
+			-juga terjadi jika kita meng-assign type integer ke floating point
+		b. explicit casting
+			-casting yang harus dilakukan secara manual
+			-terjadi jika cating dari bit besar ke bit kecil
+			-juga terjadi jika kita meng-assign type floating point ke integer
+
+
+	b. type data object/complex/user defined
+		-adalah type data yang berasal dari:
+			a. library bawaan java
+			b. library external
+			c. library buatan anda
+
+		-contoh type data object bawaan dari library java: java.lang.String (A.K.A: String)
+
+
+
+OPERATOR DI DALAM JAVA
+======================
+1. operator komparasi, digunakan untuk membandingkan 2 value
+	-hasilnya akhirnya selalu bertype boolean (true/false)
+	-operator :
+		<
+		<=
+		>
+		>=
+		==
+		!=
+	-operator == JANGAN anda gunakan untuk data bertype object (non primitive)
+
+2. operator logika
+	-data yang dibandingkan (operand) dan hasilnya harus bertype boolean
+	-and (&&) --> hasilnya true JIKA SEMUA operand true
+	-or (||) --> hasilnya true JIKA SALAH 1 operand true
+	-not (!) --> adalah operator inversi / pembalik 
+
+3. operator aritmatika:
+		+,-,*,/
+
+4. shorthand operator
+	-operator yg digunakan untuk menyingkat operator aritmatika yg berulang
+	+= -> a=a+1  --> a+=1;
+	-= -> a=a-1  --> a-=1;
+	/= -> a=a/1  --> a/=1;
+	*= -> a=a*1  --> a*=1;
+
+5. increment/decrement
+	-hanya berlaku untuk bilangan integer
+	++ --> + 1
+	-- --> - 1
+
+WRAPPER CLASS
+=============
+	-adalah class library bawaan dari java
+	-digunakan untuk membungkus / mengconvert String menjadi type primitive
+
+CONTROL STRUCTURE
+=================
+	-adalah block code yg digunakan untuk mengatur jalannya program
+	-jenisnya ada 2:
+	a. percabangan (branching)
+		-if - else
+			-pengujian kondisi HARUS bertype boolean
+		-switch
+			-pengujian kondisi harus menggunakan variable bertype:
+			bil bulat ,char atau String
+	b. perulangan (looping)
+		-for
+		-while
+		-do while
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

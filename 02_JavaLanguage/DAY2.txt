@@ -1,0 +1,124 @@
+ARRAY
+=====
+	-adalah variable yg bisa memuat banyak value sekaligus & semuanya bertype SERAGAM
+	-digunakan untuk menyimpan data sejenis yg berjumlah massive
+	-dalam array di java:
+		a. index terendah : 0
+		b. index tertinggi : jumlah element - 1
+		c. untuk mendapatkan jumlah element gunakan properties : namaArray.length;
+		d. jika kita mengakses index yg melebih index tertinggi, anda akan mendapatkan error:
+			java.lang.ArrayIndexOutOfBoundsException
+	-jenis array:
+		a. single dimension
+			-dalam 1 element hanya berisi 1 value
+		b. multi dimension
+			-dalam 1 element berisi array lagi
+
+parameter pada function public static void main()
+	-digunakan untuk menangkap parameter dari command line
+
+METHOD
+=======
+	-di dalam bahasa lain kadang disebut juga dengan subprogram/function/procedure/sub routiner
+	-adalah block code ,punya nama, bisa di panggil berulang2 untuk menjalankan spesifik task
+	-method overloading:
+		-kita boleh membuat banyak method dengan nama yg sama, dengan syarat:
+		a. type parameter beda
+		atau
+		b. jumlah parameter beda
+		atau
+		c. posisi parameter beda
+
+	-jenis method:
+		a. method tanpa return value (void)
+			-jika method dipanggil, dia akan running setelah itu selesai
+		b. method dengan return value (non void)
+			-jika method dipanggil, dia akan running setelah itu dia akan me-return/mengembalikan nilai
+
+
+CLASS
+======
+	-adalah blueprint / cetakan dari sebuah object
+	-dengan 1 class kita bisa membuat banyak object
+	-komponen dari sebuah class:
+		a. field/properties
+			-menandakan "apa yg dimiliki oleh sebuah object"
+
+		b. method/behaviour
+			-menandakan "apa yg bisa dilakukan oleh sebuah object"
+
+	-contoh cara mendesain class:
+		-amati object di real world: (contoh mobil)
+		1. punya apa--> implementasikan menjadi variable
+			-roda
+			-mesin
+			-body
+		2. bisa apa-->implementasikan menjadi method
+			-maju
+			-mundur
+			-belok
+	-ketika kita membuat sebuah class artinya kita membuat sebuah TYPE DATA BARU
+		
+STATIC KEYWORD
+==============
+	-bisa dipasang di field atau method
+	a. jika dipasang di field:
+		-alokasi memory field tersebut HANYA ADA 1 untuk semua object
+		-sering juga disebut dengan "class variable"
+			-field tersebut BISA diakses langsung dengan nama class
+		-jika field tanpa label static sering juga disebut dengan "object variable"
+			-field tersebut hanya bisa diakses dengan object bukan dengan nama class
+
+	b. jika dipasang di method
+		-method tersebut bisa dipanggil langsung dengan nama classnya
+
+	ATURAN STATIC
+	=============
+	method static mengakses field/method sama2 static----------->OK
+	method non static mengakses field/method static------------->OK
+	method non static mengakses field/method non static--------->OK
+	method static mengakses field/method non static----------->ERROR
+
+CONSTRUCTOR
+===========
+	-adalah block code dengan ciri2:
+		a. mirip dengan method tetapi tanpa return type (void, int,String, dll...)
+		b. namanya PERSIS dengan nama class
+		c. kita panggil ketika create object
+	-constructor digunakan untuk mengisi field secara dynamic ketika create object
+	-jenis constructor:
+		a. default
+			-tanpa parameter
+		b. non-default
+			-dengan parameter
+		
+
+THIS KEYWORD
+=============
+	-"this" itu mengacu/merefer ke "this object" atau "this class"
+	-biasanya digunakan untuk:
+		a. merefer sebuah field di class jika terjadi name clash dengan parameter sebuah method/constructor
+			-jika terjadi name clash, this bersifat MANDATORY
+			-jika tidak terjadi , bersifat optional
+
+		b. bisa digunakan untuk memanggil 1 konstruktor dari konstruktor yg lain, dengan aturan:
+			1. harus dilakukan dari sama2 konstruktor
+			2. pemanggilan this dari konstruktor HARUS PADA BARIS PALING ATAS
+			3. pemanggilan this dalam kosntruktor hanya bisa 1x per-konstruktor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
