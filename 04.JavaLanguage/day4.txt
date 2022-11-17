@@ -1,0 +1,47 @@
+INNER CLASS (IC)
+===============
+	-A.K.A: nested class
+	-class yang letaknya di dalam class lain
+	-IC sangat intensif penggunaanya di dalam:
+		a. mobil programming
+		b. GUI programming
+	-beberapa hal penting di dalam IC:
+		a. ketika kita akan membuat object dari inner class maka kita WAJIB membuat object dari outer classnya
+		terlebih dahulu
+		b. inner class punya hak akses penuh ke SEMUA methoda & field dari outer classnya TETAPI TIDAK sebaliknya
+
+	-jenis inner class:
+		a. inner class biasa/ordinary inner class
+			-jarang dipakai
+		b. anonymous inner class
+			-sering dipakai di Mobile / GUI programming
+			-adalah inner class yang TIDAK PUNYA NAMA
+			-wajib menjadi turunan ATAU mengimplement interface
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
