@@ -1,0 +1,117 @@
+EXCEPTION HANDLING (error handling)
+===================================
+	-jenis error:
+	a. syntax error:
+		-error yg disebabkan karena typo / salah ketik
+		-yg bertugas mendeteksi: compiler
+		-ini adalah error yg paling mudah
+
+	b. logic error:
+		-syntax ok
+		-runtime ok
+		-hasil tidak sesuai harapan
+
+	c. runtime error (EXCEPTION):
+		-dari segi syntax, semua sudah ok
+		-ini setingkat lebih susah dideteksi
+		-inilah yg disebut dengan exception, dan kita yg wajib menghandle
+		-tujuan menghandle exception adalah memberikan pesan error yg baik ke end user
+		-java menyediakan 5 keyword untuk menghandle exception:
+		1. try --> digunakan berpasangan dengan catch
+			-block try digunakan untuk mengawal block code yg ada kemungkinan error
+		2. catch
+			--> untuk melakukan aksi , jika terjadi error di block try
+			-block catch akan di abaikan, jika di dalam block try tidak terjadi error
+			-kode di bawah baris terjadinya error juga akan di abaikan, jika terjadi exception
+			-best practices:
+				-lakukan catch secara berjenjang, agar kita bisa melakukan specific action for specific error
+				-exception generic HARUS paling bawah
+		3. finally
+			-ini adalah block optional
+			-harus dipasang bersamaan dengan try-catch
+			-block ini AKAN selalu jalan baik ada error maupun tidak
+			-block ini SANGAT direkomendasikan untuk clean up resources
+				contoh resources:
+					a. koneksi ke db
+					b. koneksi ke file
+					c. koneksi ke API
+					dll..
+		4. throw
+			-digunakan untuk melempar exception secara manual
+		5. throws
+
+
+-JENIS EXCEPTION:
+	a. checked 
+		-wajib di handle / di report
+		-adalah Object Exception yg turunan dari java.lang.Exception
+
+	b. unchecked
+		-tidak wajib di handle / di report
+		-adalah Object Exception yg turunan dari java.lang.RuntimeException
+
+
+
+PACKAGE
+=======
+	-tehnik mengatur letak source code agar lebih mudah di manage
+	-nama root package disarankan menggunakan nama domain institusi dibalik
+		CONTOH:
+			-indivara.com
+			 com.indivara.myapp
+
+			-itb.ac.id
+ 			 id.ac.itb.myapp
+
+	-dalam sebuah class BOLEH mengimport lebih dari 1 package
+	-dalam sebuah class HANYA BOLEH ADA 1 label package & itu menandakan class tersebut tersimpan di folder mana
+	-label "package" HARUS berada di baris paling atas & HANYA BISA 1x
+
+
+JAVA ACCESS MODIFIER
+====================
+	-adalah sekumpulan keyword yg digunakan untuk mengatur visibilitas dari method/field dalam sebuah class
+	-jenisnya :
+	a. tanpa kode akses
+		-hanya bisa diakses dari folder/package yg sama
+	b. public
+		-bisa diakses dari mana saja
+	c. private
+		-hanya bisa diakses dari dalam class
+	d. protected
+		-hanya bisa diakses dari turunan
+
+	BEST PRACTICES
+	===============
+	1. usahakan SEMUA field adalah private
+	2. untuk mengakses:
+		a. read --> buatlah method get
+		b. write --> buatlah method set
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
