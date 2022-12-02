@@ -1,0 +1,19 @@
+apply plugin : 'java'
+
+jar {
+    archiveBaseName = 'helloGradle'
+    archiveVersion  = '0.1.0'
+    manifest {
+        attributes(
+            'Main-Class' : 'id.co.indivara.belajargradle.HalloDunia'
+        )
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "joda-time:joda-time:2.2"
+}
